@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <%- include('../partial/head.ejs', { title: 'Manter alunos' }) %>
+  <body>
+
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+      <%- include('../partial/header.ejs') %>
+
+      <main role="main" class="inner cover">
+        <div class="container">
+            
+            <div class="cabecalho-tabela-alunos">
+                <div>
+                    <h1>Cadastro de Alunos</h1>
+                </div>
+                <div>
+                    <a href="/incluir-aluno" type="button" class="btn btn-primary">
+                        Incluir
+                    </a>
+                </div>
+            </div>
+            
+            <%- include( '../partial/alunos-tabela', alunos ); %>
+        </div>
+      </main>
+
+      <%- include('../partial/footer.ejs') %>
+    </div>
+      <%- include('../partial/scripts-imports.ejs') %>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<div class="tabela-alunos">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Sobrenome</th>
+            <th scope="col">Endereço</th>
+            <th scope="col">Ação</th>
+          </tr>
+        </thead>
+        <tbody>
+            <% alunos.forEach(aluno => { %>
+                <tr>
+                    <th scope="row"><%= aluno.id %></th>
+                    <td><%= aluno.nome %></td>
+                    <td><%= aluno.sobrenome %></td>
+                    <td><%= aluno.endereco %></td>
+                    <td>
+                        <a href="/alterar-aluno/<%= aluno.id %>" class="btn btn-primary btn-sm">Editar</a>
+                        <a href="/excluir-aluno/<%= aluno.id %>" class="btn btn-danger btn-sm">Excluir</a>
+                    </td>
+                </tr>
+            <% }); %>
+        </tbody>
+      </table>
+</div>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <%- include('../partial/head.ejs', { title: 'Incluir Aluno' }) %>
+  <body>
+
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+      <%- include('../partial/header.ejs') %>
+
+      <main role="main" class="inner cover">
+        <div class="container">
+            
+            <div class="cabecalho-tabela-alunos">
+                <div class="titulo-tabela-alunos">
+                    <h1>Alterar Aluno</h1>
+                </div>
+            </div>
+
+            <%  if ( result &&  result.success ) { %>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="alert alert-success" role="alert">
+                            Aluno alterado com sucesso!
+                        </div>
+                    </div>
+                </div>
+            <%  } %>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <form id="form-aluno" action="/alterar-aluno/<%=aluno.id%>" method="POST">
+                        <div class="form-group">
+                          <label for="nome">Nome</label>
+                          <input type="text" class="form-control" name="nome" id="nome" value="<%= aluno.nome %>" placeholder="Nome do aluno">
+                        </div>
+                        <div class="form-group">
+                            <label for="sobrenome">Sobrenome</label>
+                            <input type="text" class="form-control" name="sobrenome" id="sobrenome" value="<%= aluno.sobrenome %>" placeholder="Sobrenome do aluno">
+                        </div>
+                        <div class="form-group">
+                            <label for="endereco">Endereço</label>
+                            <input type="text" class="form-control" name="endereco" id="endereco" value="<%= aluno.endereco %>" placeholder="Endereço do aluno">
+                        </div>
+    
+                        <button type="submit" class="btn btn-primary">Alterar</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12 d-flex justify-content-end">
+                    <a href="/" type="button" class="btn btn-light"> Voltar </a>
+                </div>
+            </div>
+
+        </div>
+      </main>
+
+      <%- include('../partial/footer.ejs') %>
+    </div>
+      <%- include('../partial/scripts-imports.ejs') %>
+  </body>
+</html>

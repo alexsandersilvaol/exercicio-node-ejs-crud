@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <%- include('../partial/head.ejs', { title: 'Incluir Aluno' }) %>
+  <body>
+
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+      <%- include('../partial/header.ejs') %>
+
+      <main role="main" class="inner cover">
+        <div class="container">
+            
+            <div class="cabecalho-tabela-alunos">
+                <div class="titulo-tabela-alunos">
+                    <h1>Excluir Aluno</h1>
+                </div>
+            </div>
+
+            <%  if ( result &&  result.success ) { %>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="alert alert-success" role="alert">
+                            Aluno excuido com sucesso! 
+                        </div>
+                    </div>
+                </div>
+            <%  } %>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <form id="form-aluno" action="/excluir-aluno/<%=aluno.id%>" method="POST">
+                        <div class="form-group">
+                          <label for="nome">Deseja exlcuir o aluno <%= aluno.nome %> <%= aluno.sobrenome %>?</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Excluir</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12 d-flex justify-content-end">
+                    <a href="/" type="button" class="btn btn-light"> Voltar </a>
+                </div>
+            </div>
+
+        </div>
+      </main>
+
+      <%- include('../partial/footer.ejs') %>
+    </div>
+      <%- include('../partial/scripts-imports.ejs') %>
+  </body>
+</html>
